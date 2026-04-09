@@ -54,6 +54,12 @@
         subtitle: 'Trusted international suppliers',
         items: [
           {
+            name: 'WINDOW EXPERT INDUSTRIES PVT LTD',
+            address: 'India — 2 lakh sq ft facility, 500 windows/day capacity, IN/EN/ASTM certified',
+            website: 'www.windowexpert.in',
+            featured: true
+          },
+          {
             name: 'ACEBOND INTERNATIONAL LIMITED',
             address: '12/F San Toi Building, 137-139 Connaught Road Central, Hong Kong',
             website: 'www.acebond.net'
@@ -193,6 +199,12 @@
         subtitle: 'Fournisseurs internationaux de confiance',
         items: [
           {
+            name: 'WINDOW EXPERT INDUSTRIES PVT LTD',
+            address: 'Inde — Usine de 2 lakh pi², capacité 500 fenêtres/jour, certifié IN/EN/ASTM',
+            website: 'www.windowexpert.in',
+            featured: true
+          },
+          {
             name: 'ACEBOND INTERNATIONAL LIMITED',
             address: '12/F San Toi Building, 137-139 Connaught Road Central, Hong Kong',
             website: 'www.acebond.net'
@@ -331,6 +343,12 @@
         title: '商业合作伙伴',
         subtitle: '值得信赖的国际供应商',
         items: [
+          {
+            name: 'WINDOW EXPERT INDUSTRIES PVT LTD',
+            address: '印度 — 2万平方英尺工厂，日产500扇窗，IN/EN/ASTM认证',
+            website: 'www.windowexpert.in',
+            featured: true
+          },
           {
             name: 'ACEBOND INTERNATIONAL LIMITED',
             address: '香港中环干诺道中137-139号三台大厦12楼',
@@ -830,13 +848,54 @@
       <!-- Partners Section -->
       <section id="partners" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-16 scroll-animate">
+          <div class="text-center mb-12 scroll-animate">
             <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">${t.partners.title}</h2>
             <p class="text-lg text-gray-600 font-sans">${t.partners.subtitle}</p>
           </div>
           
+          <!-- Featured Partner: Window Expert -->
+          ${t.partners.items[0] && t.partners.items[0].featured ? `
+          <div class="mb-10 scroll-animate">
+            <div class="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl shadow-2xl overflow-hidden">
+              <div class="grid md:grid-cols-2 gap-0">
+                <div class="p-8 md:p-10 flex flex-col justify-center">
+                  <span class="inline-block bg-yellow-500 text-gray-900 text-xs font-bold px-3 py-1 rounded-full mb-4 w-fit uppercase tracking-wider">Strategic Partner</span>
+                  <div class="h-16 mb-4">
+                    <img loading="lazy" src="/static/logo-window-expert.png" alt="${t.partners.items[0].name}" class="max-h-full object-contain">
+                  </div>
+                  <h3 class="text-xl font-bold text-white mb-2">${t.partners.items[0].name}</h3>
+                  <p class="text-gray-300 text-sm font-sans mb-4">${t.partners.items[0].address}</p>
+                  <a href="http://${t.partners.items[0].website}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-medium text-sm">
+                    <span>${t.partners.items[0].website}</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  </a>
+                </div>
+                <div class="bg-gray-800 p-8 md:p-10 flex flex-col justify-center">
+                  <div class="grid grid-cols-3 gap-3 text-center mb-6">
+                    <div class="bg-white/10 rounded-lg p-3">
+                      <div class="text-2xl font-bold text-yellow-400">500+</div>
+                      <div class="text-xs text-gray-400">Windows/Day</div>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-3">
+                      <div class="text-2xl font-bold text-yellow-400">200+</div>
+                      <div class="text-xs text-gray-400">Cities</div>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-3">
+                      <div class="text-2xl font-bold text-yellow-400">15yr</div>
+                      <div class="text-xs text-gray-400">Warranty</div>
+                    </div>
+                  </div>
+                  <p class="text-sm text-gray-300 font-sans">Product Series: Nexus, Vista, Horizon, Pegasus, Magnus, Blaze, Slidepro, Glimpse</p>
+                  <p class="text-xs text-gray-500 font-sans mt-2">IN, EN & ASTM Certified | Fenestration Professionals</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          ` : ''}
+          
+          <!-- Other Partners -->
           <div class="grid md:grid-cols-3 gap-8">
-            ${t.partners.items.map((partner, idx) => {
+            ${t.partners.items.filter(p => !p.featured).map((partner, idx) => {
               const logos = ['/static/logo-acebond.png', '/static/logo-assa-abloy.png', '/static/logo-gns.png'];
               return `
               <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 scroll-animate">
@@ -1074,7 +1133,7 @@
               <iframe 
                 src="https://maps.google.com/maps?q=Vuillemin+SME+Park+Quartier+Militaire+Mauritius&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                 width="100%" 
-                height="400" 
+                height="250" 
                 style="border:0;" 
                 allowfullscreen="" 
                 loading="lazy" 
@@ -1335,7 +1394,7 @@
       }
 
       // Send email via FormSubmit.co
-      const res = await fetch('https://formsubmit.co/ajax/moi.alu2012@gmail.com', {
+      const res = await fetch('https://formsubmit.co/ajax/moialu.contact@gmail.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
