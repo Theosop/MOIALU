@@ -8,7 +8,6 @@
       hero: {
         title: 'Menuiserie de l\'Océan Indien',
         subtitle: 'Premium Aluminium Solutions for Global Markets',
-        ciie: 'Exhibiting at CIIE 2025 - China International Import Expo',
         tagline: 'Your Trusted Aluminium Partner from Mauritius',
         cta: 'View Product Catalog',
         scroll: 'SCROLL',
@@ -148,7 +147,6 @@
       hero: {
         title: 'Menuiserie de l\'Océan Indien',
         subtitle: 'Solutions Aluminium Premium pour Marchés Mondiaux',
-        ciie: 'Exposant à CIIE 2025 - Foire Internationale des Importations de Chine',
         tagline: 'Votre Partenaire Aluminium de Confiance de Maurice',
         cta: 'Voir le Catalogue',
         scroll: 'DÉFILER',
@@ -288,7 +286,6 @@
       hero: {
         title: '印度洋门窗公司',
         subtitle: '面向全球市场的高端铝合金解决方案',
-        ciie: '参展CIIE 2025 - 中国国际进口博览会',
         tagline: '来自毛里求斯的可信赖铝合金合作伙伴',
         cta: '查看产品目录',
         scroll: '向下滚动',
@@ -505,15 +502,6 @@
               ${t.hero.subtitle}
             </p>
             
-            <!-- CIIE Badge -->
-            ${t.hero.ciie ? `
-              <div class="inline-flex items-center gap-2 px-4 py-2 bg-red-600/90 backdrop-blur-sm rounded-full border border-red-500/50 mt-4">
-                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"/>
-                </svg>
-                <span class="text-sm font-sans font-medium text-white">${t.hero.ciie}</span>
-              </div>
-            ` : ''}
           </div>
           
           <!-- Key Value Propositions -->
