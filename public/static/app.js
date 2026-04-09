@@ -4,7 +4,7 @@
 
   const translations = {
     en: {
-      nav: { home: 'Home', about: 'Company', showcase: 'Showcase', products: 'Products', partners: 'Partners', inquiry: 'Inquiry', contact: 'Contact' },
+      nav: { home: 'Home', events: 'Events', about: 'Company', showcase: 'Showcase', products: 'Products', partners: 'Partners', inquiry: 'Inquiry', contact: 'Contact' },
       hero: {
         title: 'Menuiserie de l\'Océan Indien',
         subtitle: 'Premium Aluminium Solutions for Global Markets',
@@ -144,7 +144,7 @@
       }
     },
     fr: {
-      nav: { home: 'Accueil', about: 'Entreprise', showcase: 'Vitrine', products: 'Produits', partners: 'Partenaires', inquiry: 'Demande', contact: 'Contact' },
+      nav: { home: 'Accueil', events: 'Événements', about: 'Entreprise', showcase: 'Vitrine', products: 'Produits', partners: 'Partenaires', inquiry: 'Demande', contact: 'Contact' },
       hero: {
         title: 'Menuiserie de l\'Océan Indien',
         subtitle: 'Solutions Aluminium Premium pour Marchés Mondiaux',
@@ -284,7 +284,7 @@
       }
     },
     zh: {
-      nav: { home: '首页', about: '公司', showcase: '展示', products: '产品', partners: '合作伙伴', inquiry: '询价', contact: '联系' },
+      nav: { home: '首页', events: '活动', about: '公司', showcase: '展示', products: '产品', partners: '合作伙伴', inquiry: '询价', contact: '联系' },
       hero: {
         title: '印度洋门窗公司',
         subtitle: '面向全球市场的高端铝合金解决方案',
@@ -448,6 +448,7 @@
             
             <div class="hidden md:flex gap-8 items-center">
               <a href="#home" class="font-sans font-medium text-sm text-gray-700 hover:text-blue-600 transition-colors">${t.nav.home}</a>
+              <a href="#events" class="font-sans font-medium text-sm text-white bg-teal-600 hover:bg-teal-700 px-4 py-1.5 rounded-full transition-colors animate-pulse">${t.nav.events}</a>
               <a href="#about" class="font-sans font-medium text-sm text-gray-700 hover:text-blue-600 transition-colors">${t.nav.about}</a>
               <a href="#showcase" class="font-sans font-medium text-sm text-gray-700 hover:text-blue-600 transition-colors">${t.nav.showcase}</a>
               <a href="#products" class="font-sans font-medium text-sm text-gray-700 hover:text-blue-600 transition-colors">${t.nav.products}</a>
@@ -541,6 +542,82 @@
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
               </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Events Section - Buyer-Seller Meetings 2026 -->
+      <section id="events" class="py-16 bg-gradient-to-br from-teal-50 via-white to-blue-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-10">
+            <span class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">Upcoming Event</span>
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-3">Mauritius - East Africa<br>Buyer-Seller Meetings 2026</h2>
+            <p class="text-gray-600 font-sans max-w-2xl mx-auto">Building Trade & Business Partnerships. Come and discover Mauritian expertise in aluminium manufacturing and architectural solutions.</p>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-8 items-center mb-12">
+            <!-- Event Image -->
+            <div class="rounded-2xl overflow-hidden shadow-xl border border-gray-200">
+              <img src="/static/africa-sme-event.jpg" alt="Mauritius East Africa Buyer-Seller Meetings 2026 - EDB" class="w-full h-auto">
+            </div>
+
+            <!-- Event Details -->
+            <div class="space-y-4">
+              <div class="bg-white rounded-xl p-5 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                <div class="flex items-start gap-4">
+                  <div class="bg-teal-600 text-white rounded-lg px-3 py-2 text-center min-w-[70px]">
+                    <div class="text-xs font-medium">APR</div>
+                    <div class="text-xl font-bold">20-21</div>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-gray-900 text-lg">Dar es Salaam, Tanzania</h3>
+                    <p class="text-gray-600 text-sm font-sans">Johari Rotana Hotel</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl p-5 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                <div class="flex items-start gap-4">
+                  <div class="bg-teal-600 text-white rounded-lg px-3 py-2 text-center min-w-[70px]">
+                    <div class="text-xs font-medium">APR</div>
+                    <div class="text-xl font-bold">23-24</div>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-gray-900 text-lg">Kigali, Rwanda</h3>
+                    <p class="text-gray-600 text-sm font-sans">Kigali Serena Hotel</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl p-5 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                <div class="flex items-start gap-4">
+                  <div class="bg-teal-600 text-white rounded-lg px-3 py-2 text-center min-w-[70px]">
+                    <div class="text-xs font-medium">APR</div>
+                    <div class="text-xl font-bold">27-28</div>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-gray-900 text-lg">Nairobi, Kenya</h3>
+                    <p class="text-gray-600 text-sm font-sans">Pullman Nairobi Upper Hill</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-teal-600 to-blue-600 rounded-xl p-5 text-white shadow-lg">
+                <p class="font-bold text-lg mb-1">MOI Aluminium is exhibiting!</p>
+                <p class="text-teal-100 text-sm font-sans">Meet us at all 3 locations. Premium aluminium windows, doors & architectural solutions for the East African market.</p>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a href="https://www.edbmauritius.org" target="_blank" class="flex-1 text-center bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:shadow-lg text-sm">
+                  Register at EDB
+                </a>
+                <a href="#inquiry" class="flex-1 text-center bg-white hover:bg-gray-50 text-teal-700 font-semibold py-3 px-6 rounded-xl border-2 border-teal-600 transition-all duration-300 hover:shadow-lg text-sm">
+                  Book a Meeting with MOI
+                </a>
+              </div>
+
+              <p class="text-xs text-gray-500 font-sans text-center">Organised by the Economic Development Board of Mauritius | bsmeastafrica@edbmauritius.org | +230 203 3800</p>
             </div>
           </div>
         </div>
@@ -1218,32 +1295,36 @@
       // Build details text
       let details = '';
       if (currentRole === 'client') {
-        details += 'Project Type: ' + (roleData.projectType || '-') + ', ';
-        details += 'Location: ' + (roleData.location || '-') + ', ';
-        details += 'Budget: ' + (roleData.budget || '-') + ', ';
-        details += 'Timeline: ' + (roleData.timeline || '-') + ', ';
+        details += 'Project Type: ' + (roleData.projectType || '-') + '\n';
+        details += 'Location: ' + (roleData.location || '-') + '\n';
+        details += 'Budget: ' + (roleData.budget || '-') + '\n';
+        details += 'Timeline: ' + (roleData.timeline || '-') + '\n';
         details += 'Quantities: ' + (roleData.quantity || '-');
       } else if (currentRole === 'supplier') {
-        details += 'Products/Services: ' + (roleData.products || '-') + ', ';
+        details += 'Products/Services: ' + (roleData.products || '-') + '\n';
         details += 'Country: ' + (roleData.country || '-');
       } else if (currentRole === 'partner') {
         details += 'Partnership Interest: ' + (roleData.interest || '-');
       }
 
-      // Send to Google Apps Script (sends email)
-      var params = new URLSearchParams({
-        role: currentRole,
-        name: name,
-        email: email,
-        phone: phone || '-',
-        company: company || '-',
-        details: details.trim(),
-        message: message
+      // Send email via FormSubmit.co
+      const res = await fetch('https://formsubmit.co/ajax/moi.alu2012@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: '[' + currentRole.toUpperCase() + '] New Inquiry from ' + name + ' - MOI Aluminium',
+          _replyto: email,
+          _template: 'table',
+          Name: name,
+          Email: email,
+          Phone: phone || '-',
+          Company: company || '-',
+          Role: currentRole,
+          Details: details.trim(),
+          Message: message
+        })
       });
-      var img = new Image();
-      img.src = 'https://script.google.com/macros/s/AKfycbxWIthws62Xr8a13g5J6u3izoNaWLRXdVVerbHVF4mRKQB-hL7LzL2oTAuylRSVP6a0gw/exec?' + params.toString();
-
-      var data = { success: true };
+      const data = await res.json();
 
       if (data.success) {
         status.className = 'text-center py-3 px-4 rounded-lg text-sm font-sans bg-green-50 text-green-700 border border-green-200 mt-4';
