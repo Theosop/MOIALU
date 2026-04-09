@@ -436,16 +436,22 @@
               <span class="font-sans font-semibold text-lg text-gray-900 hidden sm:inline">Menuiserie de l'Océan Indien</span>
             </div>
             
-            <!-- Mobile Language Selector -->
-            <div class="flex md:hidden gap-1.5">
-              <button onclick="window.moiApp.setLang('en')" class="px-2.5 py-1.5 text-xs font-sans font-semibold ${currentLang==='en'?'bg-blue-600 text-white':'bg-gray-100 text-gray-700'} rounded-md">EN</button>
-              <button onclick="window.moiApp.setLang('fr')" class="px-2.5 py-1.5 text-xs font-sans font-semibold ${currentLang==='fr'?'bg-blue-600 text-white':'bg-gray-100 text-gray-700'} rounded-md">FR</button>
-              <button onclick="window.moiApp.setLang('zh')" class="px-2.5 py-1.5 text-xs font-sans font-semibold ${currentLang==='zh'?'bg-blue-600 text-white':'bg-gray-100 text-gray-700'} rounded-md">中文</button>
+            <!-- Mobile: Hamburger + Language -->
+            <div class="flex md:hidden items-center gap-3">
+              <div class="flex gap-1">
+                <button onclick="window.moiApp.setLang('en')" class="px-2 py-1 text-xs font-sans font-semibold ${currentLang==='en'?'bg-blue-600 text-white':'bg-gray-100 text-gray-700'} rounded-md">EN</button>
+                <button onclick="window.moiApp.setLang('fr')" class="px-2 py-1 text-xs font-sans font-semibold ${currentLang==='fr'?'bg-blue-600 text-white':'bg-gray-100 text-gray-700'} rounded-md">FR</button>
+                <button onclick="window.moiApp.setLang('zh')" class="px-2 py-1 text-xs font-sans font-semibold ${currentLang==='zh'?'bg-blue-600 text-white':'bg-gray-100 text-gray-700'} rounded-md">中文</button>
+              </div>
+              <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="p-2 rounded-lg hover:bg-gray-100">
+                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+              </button>
             </div>
             
+            <!-- Desktop Navigation -->
             <div class="hidden md:flex gap-8 items-center">
               <a href="#home" class="font-sans font-medium text-sm text-gray-700 hover:text-blue-600 transition-colors">${t.nav.home}</a>
-              <a href="#events" class="font-sans font-medium text-sm text-white bg-teal-600 hover:bg-teal-700 px-4 py-1.5 rounded-full transition-colors animate-pulse">${t.nav.events}</a>
+              <a href="#events" class="font-sans font-medium text-sm text-white bg-teal-600 hover:bg-teal-700 px-4 py-1.5 rounded-full transition-colors">${t.nav.events}</a>
               <a href="#about" class="font-sans font-medium text-sm text-gray-700 hover:text-blue-600 transition-colors">${t.nav.about}</a>
               <a href="#showcase" class="font-sans font-medium text-sm text-gray-700 hover:text-blue-600 transition-colors">${t.nav.showcase}</a>
               <a href="#products" class="font-sans font-medium text-sm text-gray-700 hover:text-blue-600 transition-colors">${t.nav.products}</a>
@@ -459,6 +465,19 @@
                 <button onclick="window.moiApp.setLang('zh')" class="px-3 py-1.5 text-sm font-sans font-semibold ${currentLang==='zh'?'bg-blue-600 text-white shadow-md':'bg-gray-100 text-gray-700 hover:bg-gray-200'} rounded-lg transition-all">中文</button>
               </div>
             </div>
+          </div>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+          <div class="px-4 py-3 space-y-1">
+            <a href="#home" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block px-4 py-2.5 text-sm font-sans font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">${t.nav.home}</a>
+            <a href="#events" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block px-4 py-2.5 text-sm font-sans font-medium text-white bg-teal-600 rounded-lg">${t.nav.events}</a>
+            <a href="#about" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block px-4 py-2.5 text-sm font-sans font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">${t.nav.about}</a>
+            <a href="#showcase" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block px-4 py-2.5 text-sm font-sans font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">${t.nav.showcase}</a>
+            <a href="#products" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block px-4 py-2.5 text-sm font-sans font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">${t.nav.products}</a>
+            <a href="#partners" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block px-4 py-2.5 text-sm font-sans font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">${t.nav.partners}</a>
+            <a href="#inquiry" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block px-4 py-2.5 text-sm font-sans font-medium text-white bg-blue-600 rounded-lg">${t.nav.inquiry}</a>
+            <a href="#contact" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block px-4 py-2.5 text-sm font-sans font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">${t.nav.contact}</a>
           </div>
         </div>
       </nav>
@@ -498,7 +517,7 @@
               <div class="h-px w-20 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
             </div>
             
-            <p class="text-2xl md:text-3xl font-sans font-light text-white/95 tracking-wide leading-relaxed max-w-3xl mx-auto mb-3 font-sans">
+            <p class="text-2xl md:text-3xl font-sans font-light text-white/95 tracking-wide leading-relaxed max-w-3xl mx-auto mb-3">
               ${t.hero.subtitle}
             </p>
             
@@ -508,7 +527,7 @@
           <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12 animate-fade-in-up animation-delay-200">
             ${Object.values(t.hero.values).map(value => `
               <div class="bg-white/10 backdrop-blur-md px-4 py-3 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
-                <p class="text-sm md:text-base font-sans font-medium text-white text-center font-sans">${value}</p>
+                <p class="text-sm md:text-base font-sans font-medium text-white text-center">${value}</p>
               </div>
             `).join('')}
           </div>
@@ -547,7 +566,7 @@
           <div class="grid lg:grid-cols-2 gap-8 items-center mb-12">
             <!-- Event Image -->
             <div class="rounded-2xl overflow-hidden shadow-xl border border-gray-200">
-              <img src="/static/africa-sme-event.jpg" alt="Mauritius East Africa Buyer-Seller Meetings 2026 - EDB" class="w-full h-auto">
+              <img loading="lazy" src="/static/africa-sme-event.jpg" alt="Mauritius East Africa Buyer-Seller Meetings 2026 - EDB" class="w-full h-auto">
             </div>
 
             <!-- Event Details -->
@@ -631,7 +650,7 @@
               <div class="relative max-w-4xl mx-auto mt-8" style="perspective: 1000px;">
                 <!-- Large Africa Continent Background -->
                 <div class="relative w-full h-[400px] md:h-[500px] flex items-center justify-center">
-                  <img src="/static/africa-satellite-hq.jpg" alt="Africa Continent" class="absolute inset-0 w-full h-full object-contain opacity-40 filter brightness-110">
+                  <img loading="lazy" src="/static/africa-satellite-hq.jpg" alt="Africa Continent" class="absolute inset-0 w-full h-full object-contain opacity-40 filter brightness-110">
                   
                   <!-- Small MOI Logo with Opening Doors in Center -->
                   <div class="relative z-20" style="width: 120px; height: 120px;">
@@ -744,7 +763,7 @@
                   <div class="grid md:grid-cols-2 gap-0">
                     <!-- Image Side -->
                     <div class="aspect-[4/3] md:aspect-auto overflow-hidden relative ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}">
-                      <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                      <img loading="lazy" src="${item.img}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                       <div class="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent"></div>
                     </div>
                     
@@ -791,7 +810,7 @@
             ${t.products.items.map((product, index) => `
               <div class="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 scroll-animate hover:-translate-y-2" style="animation-delay: ${index * 0.05}s">
                 <div class="aspect-square overflow-hidden bg-gray-100 relative">
-                  <img src="${product.img}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                  <img loading="lazy" src="${product.img}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                   <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div class="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
                     ${product.cat}
@@ -822,7 +841,7 @@
               return `
               <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 scroll-animate">
                 <div class="h-20 mb-6 flex items-center justify-center">
-                  <img src="${logos[idx]}" alt="${partner.name}" class="max-h-full max-w-full object-contain">
+                  <img loading="lazy" src="${logos[idx]}" alt="${partner.name}" class="max-h-full max-w-full object-contain">
                 </div>
                 <h3 class="text-lg font-sans font-bold text-gray-900 mb-4">${partner.name}</h3>
                 <div class="space-y-3 text-sm text-gray-600 mb-6">
@@ -1012,53 +1031,60 @@
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <!-- Phone -->
             <div class="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow scroll-animate">
-              <div class="text-3xl mb-3">📞</div>
-              <div class="font-bold text-gray-900 mb-2">Phone</div>
+              <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div class="font-bold text-gray-900 mb-2 text-sm">Phone</div>
               <a href="tel:+23054373025" class="block text-blue-600 hover:text-blue-700 text-sm mb-1">+230 5437 3025</a>
             </div>
             
-            <!-- Mobile -->
+            <!-- Mobile / WhatsApp -->
             <div class="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow scroll-animate">
-              <div class="text-3xl mb-3">📱</div>
-              <div class="font-bold text-gray-900 mb-2">Mobile</div>
+              <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.331 0-4.502-.726-6.289-1.964l-.438-.312-2.65.888.888-2.65-.312-.438A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+              </div>
+              <div class="font-bold text-gray-900 mb-2 text-sm">Mobile / WhatsApp</div>
               <a href="tel:+23059402190" class="block text-blue-600 hover:text-blue-700 text-sm">+230 5940 2190</a>
             </div>
             
             <!-- Email -->
             <div class="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow scroll-animate">
-              <div class="text-3xl mb-3">✉️</div>
-              <div class="font-bold text-gray-900 mb-2">Email</div>
+              <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div class="font-bold text-gray-900 mb-2 text-sm">Email</div>
               <a href="mailto:${t.contact.email}" class="block text-blue-600 hover:text-blue-700 text-sm mb-1">${t.contact.email}</a>
               <a href="mailto:${t.contact.email2}" class="block text-blue-600 hover:text-blue-700 text-sm">${t.contact.email2}</a>
             </div>
             
             <!-- Location -->
             <div class="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow scroll-animate">
-              <div class="text-3xl mb-3">📍</div>
-              <div class="font-bold text-gray-900 mb-2">Location</div>
+              <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div class="font-bold text-gray-900 mb-2 text-sm">Location</div>
               <p class="text-sm text-gray-600 font-sans">${t.contact.address}</p>
             </div>
           </div>
           
           <!-- Google Maps Embedded Location -->
           <div class="mt-12 scroll-animate">
-            <h3 class="text-2xl font-sans font-bold text-gray-900 mb-6 text-center">📍 Our Location</h3>
-            <div class="rounded-xl overflow-hidden shadow-2xl border-4 border-blue-100">
+            <h3 class="text-2xl font-sans font-bold text-gray-900 mb-6 text-center">Our Location</h3>
+            <div class="rounded-xl overflow-hidden shadow-xl border border-gray-200">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.8!2d57.550!3d-20.250!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217c5b7e6b7e6b7e%3A0x0!2zMjDCsDE1JzAwLjAiUyA1N8KwMzMnMDAuMCJF!5e0!3m2!1sen!2smu!4v1699999999999" 
+                src="https://maps.google.com/maps?q=Vuillemin+SME+Park+Quartier+Militaire+Mauritius&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                 width="100%" 
-                height="450" 
+                height="400" 
                 style="border:0;" 
                 allowfullscreen="" 
                 loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade"
-                title="MOI Location - DBM SME Park, Quartier Militaire, Mauritius">
+                title="MOI Aluminium - DBM SME Park, Vuillemin, Quartier Militaire, Mauritius">
               </iframe>
             </div>
             <p class="text-center mt-4 text-sm text-gray-600 font-sans">
               <strong class="text-gray-900">Unit 29 - Block 8, DBM SME Park</strong><br>
-              Vuillemin, Quartier Militaire, Mauritius<br>
-              <span class="text-xs text-gray-500">Coordinates: 20°15'S 57°33'E</span>
+              Vuillemin, Quartier Militaire, Mauritius
             </p>
           </div>
           
@@ -1071,14 +1097,14 @@
               <!-- Website QR -->
               <div class="text-center p-6 bg-white border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
                 <div class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full inline-block mb-4">WEBSITE</div>
-                <img src="/static/moi-website-qr.png" alt="MOI Website QR Code" class="w-44 h-44 mx-auto">
+                <img loading="lazy" src="/static/moi-website-qr.png" alt="MOI Website QR Code" class="w-44 h-44 mx-auto">
                 <p class="mt-3 text-sm text-gray-500 font-medium">${t.contact.website}</p>
               </div>
               
               <!-- Business Card QR -->
               <div class="text-center p-6 bg-white border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
                 <div class="bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full inline-block mb-4">BUSINESS CARD</div>
-                <img src="/static/moi-vcard-qr.png" alt="MOI Business Card QR Code - Save Contact" class="w-44 h-44 mx-auto">
+                <img loading="lazy" src="/static/moi-vcard-qr.png" alt="MOI Business Card QR Code - Save Contact" class="w-44 h-44 mx-auto">
                 <p class="mt-3 text-sm text-gray-500 font-medium">Scan to save our contact</p>
               </div>
             </div>
@@ -1100,7 +1126,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <img src="/static/logo.png" alt="Menuiserie de l'Océan Indien" class="h-16 w-16 mx-auto mb-4 opacity-90">
           <p class="text-gray-400 mb-2 font-sans">Menuiserie de l'Océan Indien Ltée</p>
-          <p class="text-sm text-gray-500 font-sans">© 2025 Menuiserie de l'Océan Indien Ltée. All rights reserved. | Made in Moris | Grade MEDIUM II Contractor</p>
+          <p class="text-sm text-gray-500 font-sans">&copy; 2026 Menuiserie de l'Oc&eacute;an Indien Lt&eacute;e. All rights reserved. | Made in Moris | Grade MEDIUM II Contractor</p>
         </div>
       </footer>
       
@@ -1110,14 +1136,6 @@
         <span class="text-sm font-semibold hidden sm:inline">WhatsApp Us</span>
       </a>
 
-      <!-- Floating Language Indicator (Mobile) -->
-      <div class="fixed bottom-6 right-6 md:hidden z-40 bg-white rounded-full shadow-2xl border-2 border-blue-600 p-1">
-        <div class="flex gap-1">
-          <button onclick="window.moiApp.setLang('en')" class="w-10 h-10 flex items-center justify-center text-xs font-bold ${currentLang==='en'?'bg-blue-600 text-white':'bg-white text-gray-700'} rounded-full transition-all">EN</button>
-          <button onclick="window.moiApp.setLang('fr')" class="w-10 h-10 flex items-center justify-center text-xs font-bold ${currentLang==='fr'?'bg-blue-600 text-white':'bg-white text-gray-700'} rounded-full transition-all">FR</button>
-          <button onclick="window.moiApp.setLang('zh')" class="w-10 h-10 flex items-center justify-center text-xs font-bold ${currentLang==='zh'?'bg-blue-600 text-white':'bg-white text-gray-700'} rounded-full transition-all">中文</button>
-        </div>
-      </div>
     `;
   }
 
