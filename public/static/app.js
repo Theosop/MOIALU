@@ -117,11 +117,11 @@
       },
       inquiry: {
         title: 'Inquiry',
-        heroTitle: 'Let us build something remarkable together',
-        subtitle: 'Whether you are a prospective client, supplier, or strategic partner — our team is ready to assist you.',
-        trust1Title: '24-hour response', trust1Desc: 'We reply within one business day',
-        trust2Title: 'Certified quality', trust2Desc: 'SMEDA Grade II \u2022 Made in Moris',
-        trust3Title: 'Global reach', trust3Desc: 'Mauritius \u2022 East Africa \u2022 Indian Ocean',
+        heroTitle: 'We would be delighted to hear from you',
+        subtitle: 'Premium aluminium windows, doors, and architectural solutions crafted in Mauritius for discerning projects worldwide.',
+        trust1Title: 'Response within 24 hours',
+        trust2Title: 'Bespoke project consultation',
+        trust3Title: 'Mauritius, East Africa, Indian Ocean',
         roleLabel: 'I am a...',
         roles: { client: 'Client', supplier: 'Supplier', partner: 'Partner' },
         common: { name: 'Full Name', email: 'Email Address', phone: 'Phone Number', company: 'Company Name', message: 'Your Message', submit: 'Submit Inquiry', sending: 'Sending...', required: 'Fields marked * are required. We typically respond within 24 hours.' },
@@ -266,10 +266,10 @@
       },
       inquiry: {
         title: 'Demande',
-        heroTitle: 'Construisons ensemble quelque chose de remarquable',
-        subtitle: 'Que vous soyez un client potentiel, un fournisseur ou un partenaire stratégique — notre équipe est prête à vous accompagner.',
-        trust1Title: 'Réponse sous 24h', trust1Desc: 'Nous répondons dans un un délai de 24 heures',
-        trust2Title: 'Qualité certifiée', trust2Desc: 'SMEDA Grade II \u2022 Made in Moris',
+        heroTitle: 'Nous serions ravis de vous accompagner',
+        subtitle: 'Solutions aluminium haut de gamme pour vos projets les plus exigeants, fabriquées à Maurice.',
+        trust1Title: 'Réponse sous 24 heures',
+        trust2Title: 'Consultation personnalisée',
         trust3Title: 'Portée mondiale', trust3Desc: 'Maurice \u2022 Afrique de l Est \u2022 Océan Indien',
         roleLabel: 'Je suis un(e)...',
         roles: { client: 'Client', supplier: 'Fournisseur', partner: 'Partenaire' },
@@ -415,10 +415,10 @@
       },
       inquiry: {
         title: '询价',
-        heroTitle: '让我们共同打造卓越项目',
+        heroTitle: '我们期待与您合作',
         subtitle: '无论您是潜在客户、供应商还是战略合作伙伴——我们的团队随时为您服务。',
-        trust1Title: '24小时响应', trust1Desc: '我们在一个工作日内回复',
-        trust2Title: '质量认证', trust2Desc: 'SMEDA Grade II \u2022 毛里求斯制造',
+        trust1Title: '24小时内回复',
+        trust2Title: '专属项目咨询',
         trust3Title: '全球覆盖', trust3Desc: '毛里求斯 \u2022 东非 \u2022 印度洋',
         roleLabel: '我是...',
         roles: { client: '客户', supplier: '供应商', partner: '合作伙伴' },
@@ -951,165 +951,68 @@
       <!-- Inquiry Section -->
       <section id="inquiry" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid lg:grid-cols-5 rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
-            <!-- Left Panel - Brand -->
-            <div class="lg:col-span-2 bg-gradient-to-br from-gray-900 via-gray-900 to-blue-950 text-white p-8 lg:p-10 flex flex-col justify-between relative overflow-hidden">
-              <div class="absolute top-0 right-0 w-64 h-64 rounded-full bg-blue-500/5 -translate-y-1/2 translate-x-1/2"></div>
-              <div class="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-blue-500/5 translate-y-1/2 -translate-x-1/2"></div>
-              <div class="relative z-10">
-                <p class="text-xs font-medium tracking-widest text-white/40 uppercase mb-6">${t.inquiry.title}</p>
-                <h2 class="text-2xl lg:text-3xl font-display font-bold text-white leading-tight mb-4">${t.inquiry.heroTitle || 'Let us build something remarkable together'}</h2>
-                <p class="text-sm text-white/50 leading-relaxed font-sans">${t.inquiry.subtitle}</p>
+          <div class="grid lg:grid-cols-5 overflow-hidden shadow-2xl" style="border-radius:16px">
+            <!-- Left Panel -->
+            <div class="lg:col-span-2 text-white p-10 lg:p-12 flex flex-col justify-center relative overflow-hidden" style="background:#0a0f1a">
+              <div class="absolute top-0 right-0 w-64 h-64 rounded-full -translate-y-1/2 translate-x-1/2" style="background:rgba(59,130,246,.04)"></div>
+              <div class="relative z-10 mb-auto pt-4">
+                <p class="text-xs font-medium tracking-widest uppercase mb-8" style="color:rgba(255,255,255,.25)">${t.inquiry.title}</p>
+                <h2 class="text-2xl lg:text-3xl font-display font-bold leading-tight mb-5" style="letter-spacing:-.01em">${t.inquiry.heroTitle || 'We would be delighted to hear from you'}</h2>
+                <p class="text-sm leading-relaxed font-sans" style="color:rgba(255,255,255,.35)">${t.inquiry.subtitle}</p>
               </div>
-              <div class="relative z-10 mt-8 space-y-5">
-                <div class="flex items-start gap-3">
-                  <div class="w-9 h-9 min-w-[36px] rounded-lg bg-white/5 border border-white/8 flex items-center justify-center">
-                    <svg class="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  </div>
-                  <div>
-                    <p class="text-sm font-medium text-white/80">${t.inquiry.trust1Title || '24-hour response'}</p>
-                    <p class="text-xs text-white/35 font-sans">${t.inquiry.trust1Desc || 'We reply within one business day'}</p>
-                  </div>
+              <div class="relative z-10 mt-10 pt-8" style="border-top:1px solid rgba(255,255,255,.06)">
+                <div class="flex items-center gap-3 mb-5">
+                  <div class="w-1.5 h-1.5 rounded-full" style="background:rgba(255,255,255,.2)"></div>
+                  <span class="text-xs font-sans" style="color:rgba(255,255,255,.35)">${t.inquiry.trust1Title || 'Response within 24 hours'}</span>
                 </div>
-                <div class="flex items-start gap-3">
-                  <div class="w-9 h-9 min-w-[36px] rounded-lg bg-white/5 border border-white/8 flex items-center justify-center">
-                    <svg class="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                  </div>
-                  <div>
-                    <p class="text-sm font-medium text-white/80">${t.inquiry.trust2Title || 'Certified quality'}</p>
-                    <p class="text-xs text-white/35 font-sans">${t.inquiry.trust2Desc || 'SMEDA Grade II \u2022 Made in Moris'}</p>
-                  </div>
+                <div class="flex items-center gap-3 mb-5">
+                  <div class="w-1.5 h-1.5 rounded-full" style="background:rgba(255,255,255,.2)"></div>
+                  <span class="text-xs font-sans" style="color:rgba(255,255,255,.35)">${t.inquiry.trust2Title || 'Bespoke project consultation'}</span>
                 </div>
-                <div class="flex items-start gap-3">
-                  <div class="w-9 h-9 min-w-[36px] rounded-lg bg-white/5 border border-white/8 flex items-center justify-center">
-                    <svg class="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  </div>
-                  <div>
-                    <p class="text-sm font-medium text-white/80">${t.inquiry.trust3Title || 'Global reach'}</p>
-                    <p class="text-xs text-white/35 font-sans">${t.inquiry.trust3Desc || 'Mauritius \u2022 East Africa \u2022 Indian Ocean'}</p>
-                  </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-1.5 h-1.5 rounded-full" style="background:rgba(255,255,255,.2)"></div>
+                  <span class="text-xs font-sans" style="color:rgba(255,255,255,.35)">${t.inquiry.trust3Title || 'Mauritius, East Africa, Indian Ocean'}</span>
                 </div>
               </div>
             </div>
-
-            <!-- Right Panel - Form -->
-            <div class="lg:col-span-3 bg-white p-8 lg:p-10">
-              <!-- Role Tabs -->
-              <div class="flex gap-1.5 bg-gray-100 p-1 rounded-xl mb-8">
-                <button type="button" onclick="selectInquiryRole('client')" id="role-client" class="inquiry-role-btn flex-1 py-2.5 px-3 rounded-lg text-xs font-semibold transition-all duration-200 bg-white text-gray-900 shadow-sm">${t.inquiry.roles.client}</button>
-                <button type="button" onclick="selectInquiryRole('supplier')" id="role-supplier" class="inquiry-role-btn flex-1 py-2.5 px-3 rounded-lg text-xs font-semibold transition-all duration-200 text-gray-400 hover:text-gray-600">${t.inquiry.roles.supplier}</button>
-                <button type="button" onclick="selectInquiryRole('partner')" id="role-partner" class="inquiry-role-btn flex-1 py-2.5 px-3 rounded-lg text-xs font-semibold transition-all duration-200 text-gray-400 hover:text-gray-600">${t.inquiry.roles.partner}</button>
+            <!-- Right Panel -->
+            <div class="lg:col-span-3 p-8 lg:p-10" style="background:#fafaf9">
+              <div class="flex gap-0 mb-10" style="border-bottom:1px solid #e5e5e0">
+                <button type="button" onclick="selectInquiryRole('client')" id="role-client" class="inquiry-role-btn flex-1 pb-3.5 text-center text-xs font-semibold tracking-widest uppercase transition-all duration-200" style="border-bottom:1.5px solid #1a1a1a;color:#1a1a1a;margin-bottom:-1px;background:none;border-top:none;border-left:none;border-right:none;cursor:pointer">${t.inquiry.roles.client}</button>
+                <button type="button" onclick="selectInquiryRole('supplier')" id="role-supplier" class="inquiry-role-btn flex-1 pb-3.5 text-center text-xs font-semibold tracking-widest uppercase transition-all duration-200" style="border-bottom:1.5px solid transparent;color:#b0ada6;margin-bottom:-1px;background:none;border-top:none;border-left:none;border-right:none;cursor:pointer">${t.inquiry.roles.supplier}</button>
+                <button type="button" onclick="selectInquiryRole('partner')" id="role-partner" class="inquiry-role-btn flex-1 pb-3.5 text-center text-xs font-semibold tracking-widest uppercase transition-all duration-200" style="border-bottom:1.5px solid transparent;color:#b0ada6;margin-bottom:-1px;background:none;border-top:none;border-left:none;border-right:none;cursor:pointer">${t.inquiry.roles.partner}</button>
               </div>
-
-              <!-- Contact Fields -->
-              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Contact</p>
-              <div class="grid md:grid-cols-2 gap-x-4 gap-y-3 mb-6">
-                <div>
-                  <label class="block text-xs font-medium text-gray-500 mb-1.5">${t.inquiry.common.name} <span class="text-red-400">*</span></label>
-                  <input type="text" id="inq-name" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition text-sm font-sans bg-gray-50 focus:bg-white" placeholder="${t.inquiry.common.name}">
-                </div>
-                <div>
-                  <label class="block text-xs font-medium text-gray-500 mb-1.5">${t.inquiry.common.email} <span class="text-red-400">*</span></label>
-                  <input type="email" id="inq-email" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition text-sm font-sans bg-gray-50 focus:bg-white" placeholder="${t.inquiry.common.email}">
-                </div>
-                <div>
-                  <label class="block text-xs font-medium text-gray-500 mb-1.5">${t.inquiry.common.phone}</label>
-                  <input type="tel" id="inq-phone" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition text-sm font-sans bg-gray-50 focus:bg-white" placeholder="+230 XXXX XXXX">
-                </div>
-                <div>
-                  <label class="block text-xs font-medium text-gray-500 mb-1.5">${t.inquiry.common.company}</label>
-                  <input type="text" id="inq-company" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition text-sm font-sans bg-gray-50 focus:bg-white" placeholder="${t.inquiry.common.company}">
-                </div>
+              <p class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#b0ada6;letter-spacing:.15em">Contact</p>
+              <div class="grid md:grid-cols-2 gap-x-5 gap-y-5 mb-8">
+                <div><label class="block text-xs font-medium mb-2" style="color:#8a8a8a">${t.inquiry.common.name} <span style="color:#c5775a">*</span></label><input type="text" id="inq-name" class="w-full py-2.5 text-sm font-sans outline-none transition" style="border:none;border-bottom:1px solid #ddd;background:transparent;color:#1a1a1a;border-radius:0" placeholder="${t.inquiry.common.name}"></div>
+                <div><label class="block text-xs font-medium mb-2" style="color:#8a8a8a">${t.inquiry.common.email} <span style="color:#c5775a">*</span></label><input type="email" id="inq-email" class="w-full py-2.5 text-sm font-sans outline-none transition" style="border:none;border-bottom:1px solid #ddd;background:transparent;color:#1a1a1a;border-radius:0" placeholder="${t.inquiry.common.email}"></div>
+                <div><label class="block text-xs font-medium mb-2" style="color:#8a8a8a">${t.inquiry.common.phone}</label><input type="tel" id="inq-phone" class="w-full py-2.5 text-sm font-sans outline-none transition" style="border:none;border-bottom:1px solid #ddd;background:transparent;color:#1a1a1a;border-radius:0" placeholder="+230 XXXX XXXX"></div>
+                <div><label class="block text-xs font-medium mb-2" style="color:#8a8a8a">${t.inquiry.common.company}</label><input type="text" id="inq-company" class="w-full py-2.5 text-sm font-sans outline-none transition" style="border:none;border-bottom:1px solid #ddd;background:transparent;color:#1a1a1a;border-radius:0" placeholder="${t.inquiry.common.company}"></div>
               </div>
-
-              <!-- CLIENT Fields -->
               <div id="fields-client" class="role-fields">
-                <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">${t.inquiry.client.sectionTitle}</p>
-                <div class="grid md:grid-cols-2 gap-x-4 gap-y-3 mb-3">
-                  <div>
-                    <label class="block text-xs font-medium text-gray-500 mb-1.5">${t.inquiry.client.projectType}</label>
-                    <select id="inq-projectType" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition text-sm font-sans bg-gray-50 focus:bg-white cursor-pointer">
-                      <option value="">Select...</option>
-                      <option value="residential">${t.inquiry.client.projectTypes.residential}</option>
-                      <option value="commercial">${t.inquiry.client.projectTypes.commercial}</option>
-                      <option value="industrial">${t.inquiry.client.projectTypes.industrial}</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label class="block text-xs font-medium text-gray-500 mb-1.5">${t.inquiry.client.location}</label>
-                    <input type="text" id="inq-location" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition text-sm font-sans bg-gray-50 focus:bg-white" placeholder="${t.inquiry.client.locationPlaceholder}">
-                  </div>
-                  <div>
-                    <label class="block text-xs font-medium text-gray-500 mb-1.5">${t.inquiry.client.budget}</label>
-                    <select id="inq-budget" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition text-sm font-sans bg-gray-50 focus:bg-white cursor-pointer">
-                      <option value="">Select...</option>
-                      <option value="under500k">${t.inquiry.client.budgets.under500k}</option>
-                      <option value="500k1m">${t.inquiry.client.budgets['500k1m']}</option>
-                      <option value="1m3m">${t.inquiry.client.budgets['1m3m']}</option>
-                      <option value="3m5m">${t.inquiry.client.budgets['3m5m']}</option>
-                      <option value="above5m">${t.inquiry.client.budgets.above5m}</option>
-                      <option value="undisclosed">${t.inquiry.client.budgets.undisclosed}</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label class="block text-xs font-medium text-gray-500 mb-1.5">${t.inquiry.client.timeline}</label>
-                    <select id="inq-timeline" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition text-sm font-sans bg-gray-50 focus:bg-white cursor-pointer">
-                      <option value="">Select...</option>
-                      <option value="urgent">${t.inquiry.client.timelines.urgent}</option>
-                      <option value="short">${t.inquiry.client.timelines.short}</option>
-                      <option value="medium">${t.inquiry.client.timelines.medium}</option>
-                      <option value="long">${t.inquiry.client.timelines.long}</option>
-                      <option value="flexible">${t.inquiry.client.timelines.flexible}</option>
-                    </select>
-                  </div>
+                <p class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#b0ada6;letter-spacing:.15em">${t.inquiry.client.sectionTitle}</p>
+                <div class="grid md:grid-cols-2 gap-x-5 gap-y-5 mb-5">
+                  <div><label class="block text-xs font-medium mb-2" style="color:#8a8a8a">${t.inquiry.client.projectType}</label><select id="inq-projectType" class="w-full py-2.5 text-sm font-sans outline-none cursor-pointer" style="border:none;border-bottom:1px solid #ddd;background:transparent;color:#1a1a1a;border-radius:0;-webkit-appearance:none"><option value="">Select...</option><option value="residential">${t.inquiry.client.projectTypes.residential}</option><option value="commercial">${t.inquiry.client.projectTypes.commercial}</option><option value="industrial">${t.inquiry.client.projectTypes.industrial}</option></select></div>
+                  <div><label class="block text-xs font-medium mb-2" style="color:#8a8a8a">${t.inquiry.client.location}</label><input type="text" id="inq-location" class="w-full py-2.5 text-sm font-sans outline-none transition" style="border:none;border-bottom:1px solid #ddd;background:transparent;color:#1a1a1a;border-radius:0" placeholder="${t.inquiry.client.locationPlaceholder}"></div>
+                  <div><label class="block text-xs font-medium mb-2" style="color:#8a8a8a">${t.inquiry.client.budget}</label><select id="inq-budget" class="w-full py-2.5 text-sm font-sans outline-none cursor-pointer" style="border:none;border-bottom:1px solid #ddd;background:transparent;color:#1a1a1a;border-radius:0;-webkit-appearance:none"><option value="">Select...</option><option value="under500k">${t.inquiry.client.budgets.under500k}</option><option value="500k1m">${t.inquiry.client.budgets['500k1m']}</option><option value="1m3m">${t.inquiry.client.budgets['1m3m']}</option><option value="3m5m">${t.inquiry.client.budgets['3m5m']}</option><option value="above5m">${t.inquiry.client.budgets.above5m}</option><option value="undisclosed">${t.inquiry.client.budgets.undisclosed}</option></select></div>
+                  <div><label class="block text-xs font-medium mb-2" style="color:#8a8a8a">${t.inquiry.client.timeline}</label><select id="inq-timeline" class="w-full py-2.5 text-sm font-sans outline-none cursor-pointer" style="border:none;border-bottom:1px solid #ddd;background:transparent;color:#1a1a1a;border-radius:0;-webkit-appearance:none"><option value="">Select...</option><option value="urgent">${t.inquiry.client.timelines.urgent}</option><option value="short">${t.inquiry.client.timelines.short}</option><option value="medium">${t.inquiry.client.timelines.medium}</option><option value="long">${t.inquiry.client.timelines.long}</option><option value="flexible">${t.inquiry.client.timelines.flexible}</option></select></div>
                 </div>
-                <div class="mb-6">
-                  <label class="block text-xs font-medium text-gray-500 mb-1.5">${t.inquiry.client.quantity}</label>
-                  <input type="text" id="inq-quantity" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition text-sm font-sans bg-gray-50 focus:bg-white" placeholder="${t.inquiry.client.quantityPlaceholder}">
-                </div>
+                <div class="mb-8"><label class="block text-xs font-medium mb-2" style="color:#8a8a8a">${t.inquiry.client.quantity}</label><input type="text" id="inq-quantity" class="w-full py-2.5 text-sm font-sans outline-none transition" style="border:none;border-bottom:1px solid #ddd;background:transparent;color:#1a1a1a;border-radius:0" placeholder="${t.inquiry.client.quantityPlaceholder}"></div>
               </div>
-
-              <!-- SUPPLIER Fields -->
               <div id="fields-supplier" class="role-fields hidden">
-                <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">${t.inquiry.supplier.sectionTitle}</p>
-                <div class="mb-3">
-                  <label class="block text-xs font-medium text-gray-500 mb-1.5">${t.inquiry.supplier.products}</label>
-                  <textarea id="inq-supplierProducts" rows="3" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition text-sm font-sans bg-gray-50 focus:bg-white resize-vertical" placeholder="${t.inquiry.supplier.productsPlaceholder}"></textarea>
-                </div>
-                <div class="mb-6">
-                  <label class="block text-xs font-medium text-gray-500 mb-1.5">${t.inquiry.supplier.country}</label>
-                  <input type="text" id="inq-supplierCountry" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition text-sm font-sans bg-gray-50 focus:bg-white" placeholder="${t.inquiry.supplier.countryPlaceholder}">
-                </div>
+                <p class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#b0ada6;letter-spacing:.15em">${t.inquiry.supplier.sectionTitle}</p>
+                <div class="mb-5"><label class="block text-xs font-medium mb-2" style="color:#8a8a8a">${t.inquiry.supplier.products}</label><textarea id="inq-supplierProducts" rows="3" class="w-full px-3.5 py-2.5 text-sm font-sans outline-none transition resize-vertical" style="border:1px solid #e5e5e0;background:#fff;color:#1a1a1a;border-radius:6px" placeholder="${t.inquiry.supplier.productsPlaceholder}"></textarea></div>
+                <div class="mb-8"><label class="block text-xs font-medium mb-2" style="color:#8a8a8a">${t.inquiry.supplier.country}</label><input type="text" id="inq-supplierCountry" class="w-full py-2.5 text-sm font-sans outline-none transition" style="border:none;border-bottom:1px solid #ddd;background:transparent;color:#1a1a1a;border-radius:0" placeholder="${t.inquiry.supplier.countryPlaceholder}"></div>
               </div>
-
-              <!-- PARTNER Fields -->
               <div id="fields-partner" class="role-fields hidden">
-                <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">${t.inquiry.partner.sectionTitle}</p>
-                <div class="mb-6">
-                  <label class="block text-xs font-medium text-gray-500 mb-1.5">${t.inquiry.partner.interest}</label>
-                  <select id="inq-partnerInterest" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition text-sm font-sans bg-gray-50 focus:bg-white cursor-pointer">
-                    <option value="">Select...</option>
-                    <option value="distribution">${t.inquiry.partner.interests.distribution}</option>
-                    <option value="joint">${t.inquiry.partner.interests.joint}</option>
-                    <option value="technical">${t.inquiry.partner.interests.technical}</option>
-                    <option value="investment">${t.inquiry.partner.interests.investment}</option>
-                    <option value="other">${t.inquiry.partner.interests.other}</option>
-                  </select>
-                </div>
+                <p class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#b0ada6;letter-spacing:.15em">${t.inquiry.partner.sectionTitle}</p>
+                <div class="mb-8"><label class="block text-xs font-medium mb-2" style="color:#8a8a8a">${t.inquiry.partner.interest}</label><select id="inq-partnerInterest" class="w-full py-2.5 text-sm font-sans outline-none cursor-pointer" style="border:none;border-bottom:1px solid #ddd;background:transparent;color:#1a1a1a;border-radius:0;-webkit-appearance:none"><option value="">Select...</option><option value="distribution">${t.inquiry.partner.interests.distribution}</option><option value="joint">${t.inquiry.partner.interests.joint}</option><option value="technical">${t.inquiry.partner.interests.technical}</option><option value="investment">${t.inquiry.partner.interests.investment}</option><option value="other">${t.inquiry.partner.interests.other}</option></select></div>
               </div>
-
-              <!-- Message -->
-              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">${t.inquiry.common.message}</p>
-              <div class="mb-6">
-                <textarea id="inq-message" rows="4" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition text-sm font-sans bg-gray-50 focus:bg-white resize-vertical" placeholder="${t.inquiry.common.message}..."></textarea>
-              </div>
-
-              <!-- Submit -->
-              <button id="inq-submit" onclick="submitInquiryForm()" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3.5 px-6 rounded-xl transition-all duration-200 text-sm tracking-wide">
-                ${t.inquiry.common.submit}
-              </button>
+              <p class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#b0ada6;letter-spacing:.15em">${t.inquiry.common.message}</p>
+              <div class="mb-8"><textarea id="inq-message" rows="4" class="w-full px-3.5 py-2.5 text-sm font-sans outline-none transition resize-vertical" style="border:1px solid #e5e5e0;background:#fff;color:#1a1a1a;border-radius:6px" placeholder="${t.inquiry.common.message}..."></textarea></div>
+              <button id="inq-submit" onclick="submitInquiryForm()" class="w-full py-4 text-xs font-semibold tracking-widest uppercase text-white transition-all duration-200 hover:opacity-90" style="background:#0a0f1a;border:none;cursor:pointer;letter-spacing:.15em">${t.inquiry.common.submit}</button>
               <div id="inq-status" class="hidden text-center py-3 px-4 rounded-lg text-sm font-sans mt-4"></div>
-              <p class="text-xs text-gray-400 text-center mt-3 font-sans">${t.inquiry.common.required}</p>
+              <p class="text-xs text-center mt-4 font-sans" style="color:#bbb">${t.inquiry.common.required}</p>
             </div>
           </div>
         </div>
@@ -1181,34 +1084,16 @@
             </p>
           </div>
           
-          <!-- QR Code & Digital Business Card Section -->
-          <div class="mt-16 scroll-animate">
-            <h3 class="text-2xl font-sans font-bold text-gray-900 mb-2 text-center">${t.contact.qrTitle || 'Scan to Visit Our Website'}</h3>
-            <p class="text-gray-600 mb-8 font-sans text-center">${t.contact.qrSubtitle || 'Scan this QR code with your phone camera'}</p>
-            
-            <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-              <!-- Website QR -->
-              <div class="text-center p-6 bg-white border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
-                <div class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full inline-block mb-4">WEBSITE</div>
-                <img loading="lazy" src="/static/moi-website-qr.png" alt="MOI Website QR Code" class="w-44 h-44 mx-auto">
-                <p class="mt-3 text-sm text-gray-500 font-medium">${t.contact.website}</p>
-              </div>
-              
-              <!-- Business Card QR -->
-              <div class="text-center p-6 bg-white border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
-                <div class="bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full inline-block mb-4">BUSINESS CARD</div>
-                <img loading="lazy" src="/static/moi-vcard-qr.png" alt="MOI Business Card QR Code - Save Contact" class="w-44 h-44 mx-auto">
-                <p class="mt-3 text-sm text-gray-500 font-medium">Scan to save our contact</p>
-              </div>
-            </div>
-
-            <!-- Save Contact Button -->
-            <div class="text-center mt-8">
-              <a href="/static/moi-contact.vcf" download="MOI-Aluminium.vcf" class="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 hover:shadow-lg text-sm">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                Save Our Business Card
+          <!-- QR Code - Digital Business Card -->
+          <div class="mt-16 text-center scroll-animate">
+            <p class="text-xs font-semibold tracking-widest uppercase mb-6" style="color:#b0ada6;letter-spacing:.15em">${t.contact.qrTitle || 'Digital Business Card'}</p>
+            <div class="inline-block p-8 bg-white rounded-2xl shadow-lg border border-gray-100">
+              <img loading="lazy" src="/static/moi-qr.png" alt="MOI Aluminium - Scan to save contact" class="w-44 h-44 mx-auto mb-4">
+              <p class="text-xs text-gray-500 font-sans mb-4">Scan to save our contact details</p>
+              <a href="/static/moi-contact.vcf" download="MOI-Aluminium.vcf" class="inline-flex items-center gap-2 text-xs font-medium px-5 py-2.5 rounded-lg transition-all duration-200 hover:opacity-80" style="background:#0a0f1a;color:#fff">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                Save contact
               </a>
-              <p class="text-xs text-gray-400 mt-2 font-sans">Downloads contact file (.vcf) to your phone or computer</p>
             </div>
           </div>
         </div>
@@ -1351,11 +1236,13 @@
   window.selectInquiryRole = function(role) {
     currentRole = role;
     document.querySelectorAll('.inquiry-role-btn').forEach(btn => {
-      btn.className = 'inquiry-role-btn flex-1 py-2.5 px-3 rounded-lg text-xs font-semibold transition-all duration-200 text-gray-400 hover:text-gray-600';
+      btn.style.borderBottom = '1.5px solid transparent';
+      btn.style.color = '#b0ada6';
     });
     const activeBtn = document.getElementById('role-' + role);
     if (activeBtn) {
-      activeBtn.className = 'inquiry-role-btn flex-1 py-2.5 px-3 rounded-lg text-xs font-semibold transition-all duration-200 bg-white text-gray-900 shadow-sm';
+      activeBtn.style.borderBottom = '1.5px solid #1a1a1a';
+      activeBtn.style.color = '#1a1a1a';
     }
     document.querySelectorAll('.role-fields').forEach(el => el.classList.add('hidden'));
     const fields = document.getElementById('fields-' + role);
