@@ -1062,13 +1062,34 @@
             </p>
           </div>
           
-          <!-- QR Code Section -->
-          <div class="mt-16 text-center scroll-animate">
-            <h3 class="text-2xl font-sans font-bold text-gray-900 mb-4">${t.contact.qrTitle || 'Scan to Visit Our Website'}</h3>
-            <p class="text-gray-600 mb-6 font-sans">${t.contact.qrSubtitle || 'Scan this QR code with your phone camera'}</p>
-            <div class="inline-block p-6 bg-white border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
-              <img src="/static/moi-website-qr.png" alt="MOI Website QR Code" class="w-48 h-48 mx-auto">
-              <p class="mt-4 text-sm text-gray-500 font-medium">${t.contact.website}</p>
+          <!-- QR Code & Digital Business Card Section -->
+          <div class="mt-16 scroll-animate">
+            <h3 class="text-2xl font-sans font-bold text-gray-900 mb-2 text-center">${t.contact.qrTitle || 'Scan to Visit Our Website'}</h3>
+            <p class="text-gray-600 mb-8 font-sans text-center">${t.contact.qrSubtitle || 'Scan this QR code with your phone camera'}</p>
+            
+            <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <!-- Website QR -->
+              <div class="text-center p-6 bg-white border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                <div class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full inline-block mb-4">WEBSITE</div>
+                <img src="/static/moi-website-qr.png" alt="MOI Website QR Code" class="w-44 h-44 mx-auto">
+                <p class="mt-3 text-sm text-gray-500 font-medium">${t.contact.website}</p>
+              </div>
+              
+              <!-- Business Card QR -->
+              <div class="text-center p-6 bg-white border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                <div class="bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full inline-block mb-4">BUSINESS CARD</div>
+                <img src="/static/moi-vcard-qr.png" alt="MOI Business Card QR Code - Save Contact" class="w-44 h-44 mx-auto">
+                <p class="mt-3 text-sm text-gray-500 font-medium">Scan to save our contact</p>
+              </div>
+            </div>
+
+            <!-- Save Contact Button -->
+            <div class="text-center mt-8">
+              <a href="/static/moi-contact.vcf" download="MOI-Aluminium.vcf" class="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 hover:shadow-lg text-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                Save Our Business Card
+              </a>
+              <p class="text-xs text-gray-400 mt-2 font-sans">Downloads contact file (.vcf) to your phone or computer</p>
             </div>
           </div>
         </div>
