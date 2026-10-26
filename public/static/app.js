@@ -2,6 +2,17 @@
 (function() {
   'use strict';
 
+  // WhatsApp and email routing for contact and inquiries
+  const WHATSAPP_NUMBER = '23059402190'; // +230 5940 2190, digits only for wa.me
+  const FORM_EMAIL = 'moialu.contact@gmail.com'; // FormSubmit target (activated inbox)
+  const FORM_CC = 'moi.alu2012@gmail.com,info.moialu@gmail.com';
+  const MAIL_TO = 'moi.alu2012@gmail.com';
+  const MAIL_CC = 'info.moialu@gmail.com';
+
+  function waLink(text) {
+    return 'https://wa.me/' + WHATSAPP_NUMBER + (text ? '?text=' + encodeURIComponent(text) : '');
+  }
+
   const translations = {
     en: {
       nav: { home: 'Home', events: 'Events', about: 'Company', showcase: 'Showcase', products: 'Products', partners: 'Partners', inquiry: 'Inquiry', contact: 'Contact' },
@@ -115,6 +126,12 @@
         qrTitle: 'Scan to Visit Our Website',
         qrSubtitle: 'Scan this QR code with your phone camera'
       },
+      wa: {
+        floating: 'WhatsApp Us',
+        greeting: 'Hello MOI Aluminium, I would like to enquire about your products.',
+        chat: 'Chat on WhatsApp',
+        call: 'Call'
+      },
       inquiry: {
         title: 'Inquiry',
         heroTitle: 'We would be delighted to hear from you',
@@ -125,6 +142,21 @@
         roleLabel: 'I am a...',
         roles: { client: 'Client', supplier: 'Supplier', partner: 'Partner' },
         common: { name: 'Full Name', email: 'Email Address', phone: 'Phone Number', company: 'Company Name', message: 'Your Message', submit: 'Submit Inquiry', sending: 'Sending...', required: 'Fields marked * are required. We typically respond within 24 hours.' },
+        send: {
+          email: 'Send by Email',
+          whatsapp: 'Send via WhatsApp',
+          waOpening: 'WhatsApp is opening with your request. Press Send in WhatsApp to deliver it.',
+          success: 'Thank you! Your inquiry has been sent. We will get back to you within 24 hours.',
+          failed: 'Your inquiry could not be sent by email.',
+          fallback: 'Please send it via WhatsApp or from your email app:',
+          openMail: 'Open in my email app',
+          network: 'Network error.',
+          errRequired: 'Please fill in your name, email and message.',
+          errRequiredWa: 'Please fill in your name and message.',
+          errEmail: 'Please enter a valid email address.',
+          waTitle: 'New inquiry from moialu.com',
+          role: 'Profile'
+        },
         client: {
           sectionTitle: 'Project Details',
           projectType: 'Project Type',
@@ -264,6 +296,12 @@
         qrTitle: 'Scannez pour Visiter Notre Site',
         qrSubtitle: 'Scannez ce code QR avec votre appareil photo'
       },
+      wa: {
+        floating: 'Écrivez-nous',
+        greeting: 'Bonjour MOI Aluminium, je souhaiterais des informations sur vos produits.',
+        chat: 'Écrire sur WhatsApp',
+        call: 'Appeler'
+      },
       inquiry: {
         title: 'Demande',
         heroTitle: 'Nous serions ravis de vous accompagner',
@@ -274,6 +312,21 @@
         roleLabel: 'Je suis un(e)...',
         roles: { client: 'Client', supplier: 'Fournisseur', partner: 'Partenaire' },
         common: { name: 'Nom complet', email: 'Adresse e-mail', phone: 'Téléphone', company: 'Nom de l\'entreprise', message: 'Votre message', submit: 'Envoyer la demande', sending: 'Envoi en cours...', required: 'Les champs marqués * sont obligatoires. Nous répondons sous 24 heures.' },
+        send: {
+          email: 'Envoyer par e-mail',
+          whatsapp: 'Envoyer par WhatsApp',
+          waOpening: 'WhatsApp s\'ouvre avec votre demande. Appuyez sur Envoyer dans WhatsApp pour la transmettre.',
+          success: 'Merci ! Votre demande a bien été envoyée. Nous vous répondrons sous 24 heures.',
+          failed: 'Votre demande n\'a pas pu être envoyée par e-mail.',
+          fallback: 'Envoyez-la par WhatsApp ou depuis votre messagerie :',
+          openMail: 'Ouvrir dans ma messagerie',
+          network: 'Erreur de connexion.',
+          errRequired: 'Veuillez indiquer votre nom, votre adresse e-mail et votre message.',
+          errRequiredWa: 'Veuillez indiquer votre nom et votre message.',
+          errEmail: 'Veuillez saisir une adresse e-mail valide.',
+          waTitle: 'Nouvelle demande depuis moialu.com',
+          role: 'Profil'
+        },
         client: {
           sectionTitle: 'Détails du Projet',
           projectType: 'Type de projet',
@@ -413,6 +466,12 @@
         qrTitle: '扫码访问我们的网站',
         qrSubtitle: '使用手机相机扫描此二维码'
       },
+      wa: {
+        floating: 'WhatsApp 联系',
+        greeting: '您好，MOI Aluminium，我想咨询贵公司的产品。',
+        chat: '通过 WhatsApp 聊天',
+        call: '致电'
+      },
       inquiry: {
         title: '询价',
         heroTitle: '我们期待与您合作',
@@ -423,6 +482,21 @@
         roleLabel: '我是...',
         roles: { client: '客户', supplier: '供应商', partner: '合作伙伴' },
         common: { name: '姓名', email: '电子邮件', phone: '电话号码', company: '公司名称', message: '您的留言', submit: '提交询价', sending: '发送中...', required: '标有 * 的字段为必填项。我们通常在24小时内回复。' },
+        send: {
+          email: '通过电子邮件发送',
+          whatsapp: '通过 WhatsApp 发送',
+          waOpening: '正在打开 WhatsApp 并填入您的询价内容，请在 WhatsApp 中点击发送。',
+          success: '谢谢！您的询价已发送，我们将在24小时内回复。',
+          failed: '您的询价未能通过电子邮件发送。',
+          fallback: '请通过 WhatsApp 或您的邮件应用发送：',
+          openMail: '在邮件应用中打开',
+          network: '网络错误。',
+          errRequired: '请填写姓名、电子邮件和留言。',
+          errRequiredWa: '请填写姓名和留言。',
+          errEmail: '请输入有效的电子邮件地址。',
+          waTitle: '来自 moialu.com 的新询价',
+          role: '身份'
+        },
         client: {
           sectionTitle: '项目详情',
           projectType: '项目类型',
@@ -1010,8 +1084,11 @@
               </div>
               <p class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#b0ada6;letter-spacing:.15em">${t.inquiry.common.message}</p>
               <div class="mb-8"><textarea id="inq-message" rows="4" class="w-full px-3.5 py-2.5 text-sm font-sans outline-none transition resize-vertical" style="border:1px solid #e5e5e0;background:#fff;color:#1a1a1a;border-radius:6px" placeholder="${t.inquiry.common.message}..."></textarea></div>
-              <button id="inq-submit" onclick="submitInquiryForm()" class="w-full py-4 text-xs font-semibold tracking-widest uppercase text-white transition-all duration-200 hover:opacity-90" style="background:#0a0f1a;border:none;cursor:pointer;letter-spacing:.15em">${t.inquiry.common.submit}</button>
-              <div id="inq-status" class="hidden text-center py-3 px-4 rounded-lg text-sm font-sans mt-4"></div>
+              <div class="grid sm:grid-cols-2 gap-3">
+                <button type="button" id="inq-submit" onclick="submitInquiryForm()" class="w-full py-4 text-xs font-semibold tracking-widest uppercase text-white transition-all duration-200 hover:opacity-90" style="background:#0a0f1a;border:none;cursor:pointer;letter-spacing:.15em">${t.inquiry.send.email}</button>
+                <button type="button" id="inq-whatsapp" onclick="sendInquiryWhatsApp()" class="w-full py-4 text-xs font-semibold tracking-widest uppercase text-white transition-all duration-200 hover:opacity-90 inline-flex items-center justify-center gap-2" style="background:#075E54;border:none;cursor:pointer;letter-spacing:.15em">${waIcon('w-4 h-4')}${t.inquiry.send.whatsapp}</button>
+              </div>
+              <div id="inq-status" class="hidden text-center py-3 px-4 rounded-lg text-sm font-sans mt-4" role="status" aria-live="polite"></div>
               <p class="text-xs text-center mt-4 font-sans" style="color:#bbb">${t.inquiry.common.required}</p>
             </div>
           </div>
@@ -1040,7 +1117,8 @@
                 <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.331 0-4.502-.726-6.289-1.964l-.438-.312-2.65.888.888-2.65-.312-.438A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
               </div>
               <div class="font-bold text-gray-900 mb-2 text-sm">Mobile / WhatsApp</div>
-              <a href="tel:+23059402190" class="block text-blue-600 hover:text-blue-700 text-sm">+230 5940 2190</a>
+              <a href="${waLink(t.wa.greeting)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-green-700 hover:text-green-800 text-sm font-semibold mb-1">${waIcon('w-4 h-4')}${t.wa.chat}</a>
+              <a href="tel:+23059402190" class="block text-blue-600 hover:text-blue-700 text-sm">${t.wa.call} +230 5940 2190</a>
             </div>
             
             <!-- Email -->
@@ -1109,17 +1187,23 @@
       </footer>
       
       <!-- Floating WhatsApp Button -->
-      <a href="https://wa.me/23059402190?text=Hello%20MOI%20Aluminium%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" class="fixed bottom-6 left-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl hover:shadow-green-500/50 transition-all duration-300 hover:scale-110 flex items-center gap-2 pl-4 pr-5 py-3">
+      <a href="${waLink(t.wa.greeting)}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp +230 5940 2190" class="fixed bottom-6 left-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl hover:shadow-green-500/50 transition-all duration-300 hover:scale-110 flex items-center gap-2 pl-4 pr-5 py-3">
         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.331 0-4.502-.726-6.289-1.964l-.438-.312-2.65.888.888-2.65-.312-.438A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
-        <span class="text-sm font-semibold hidden sm:inline">WhatsApp Us</span>
+        <span class="text-sm font-semibold hidden sm:inline">${t.wa.floating}</span>
       </a>
 
     `;
   }
 
+  function waIcon(cls) {
+    return '<svg class="' + cls + ' fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.331 0-4.502-.726-6.289-1.964l-.438-.312-2.65.888.888-2.65-.312-.438A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>';
+  }
+
   function setLang(lang) {
     currentLang = lang;
     render();
+    // Keep the selected inquiry profile after the page is re-rendered
+    if (typeof window.selectInquiryRole === 'function') window.selectInquiryRole(currentRole);
     initScrollAnimations();
     initParallax();
     initHeroLogoAnimation();
@@ -1249,108 +1333,194 @@
     if (fields) fields.classList.remove('hidden');
   };
 
-  // Inquiry form - submission
-  window.submitInquiryForm = async function() {
-    const name = document.getElementById('inq-name').value.trim();
-    const email = document.getElementById('inq-email').value.trim();
-    const phone = document.getElementById('inq-phone').value.trim();
-    const company = document.getElementById('inq-company').value.trim();
-    const message = document.getElementById('inq-message').value.trim();
-    const btn = document.getElementById('inq-submit');
-    const status = document.getElementById('inq-status');
+  // Inquiry form - helpers shared by the email and WhatsApp buttons
+  function inquiryT(lang) {
+    return (translations[lang || currentLang] || translations.en).inquiry;
+  }
 
-    if (!name || !email || !message) {
-      status.className = 'text-center py-3 px-4 rounded-lg text-sm font-sans bg-red-50 text-red-700 border border-red-200 mt-4';
-      status.textContent = 'Please fill in all required fields (Name, Email, Message).';
-      return;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      status.className = 'text-center py-3 px-4 rounded-lg text-sm font-sans bg-red-50 text-red-700 border border-red-200 mt-4';
-      status.textContent = 'Please enter a valid email address.';
-      return;
-    }
+  function fieldValue(id) {
+    const el = document.getElementById(id);
+    return el ? el.value.trim() : '';
+  }
 
-    // Gather role-specific data
-    let roleData = {};
+  // Reads the form; labels and option names come from the language given
+  function collectInquiry(lang) {
+    const ti = inquiryT(lang);
+    const pick = (dict, key) => (key && dict && dict[key]) || key || '';
+    const d = {
+      role: currentRole,
+      roleLabel: pick(ti.roles, currentRole),
+      name: fieldValue('inq-name'),
+      email: fieldValue('inq-email'),
+      phone: fieldValue('inq-phone'),
+      company: fieldValue('inq-company'),
+      message: fieldValue('inq-message'),
+      details: []
+    };
     if (currentRole === 'client') {
-      roleData = {
-        projectType: document.getElementById('inq-projectType')?.value || '',
-        location: document.getElementById('inq-location')?.value?.trim() || '',
-        budget: document.getElementById('inq-budget')?.value || '',
-        timeline: document.getElementById('inq-timeline')?.value || '',
-        quantity: document.getElementById('inq-quantity')?.value?.trim() || ''
-      };
+      d.details = [
+        [ti.client.projectType, pick(ti.client.projectTypes, fieldValue('inq-projectType'))],
+        [ti.client.location, fieldValue('inq-location')],
+        [ti.client.budget, pick(ti.client.budgets, fieldValue('inq-budget'))],
+        [ti.client.timeline, pick(ti.client.timelines, fieldValue('inq-timeline'))],
+        [ti.client.quantity, fieldValue('inq-quantity')]
+      ];
     } else if (currentRole === 'supplier') {
-      roleData = {
-        products: document.getElementById('inq-supplierProducts')?.value?.trim() || '',
-        country: document.getElementById('inq-supplierCountry')?.value?.trim() || ''
-      };
+      d.details = [
+        [ti.supplier.products, fieldValue('inq-supplierProducts')],
+        [ti.supplier.country, fieldValue('inq-supplierCountry')]
+      ];
     } else if (currentRole === 'partner') {
-      roleData = {
-        interest: document.getElementById('inq-partnerInterest')?.value || ''
-      };
+      d.details = [[ti.partner.interest, pick(ti.partner.interests, fieldValue('inq-partnerInterest'))]];
+    }
+    d.details = d.details.filter(pair => pair[1]);
+    return d;
+  }
+
+  // Plain-text version of the inquiry, used for WhatsApp and the email app fallback
+  function inquiryText(d, ti) {
+    const c = ti.common;
+    const lines = [ti.send.waTitle, '', ti.send.role + ': ' + d.roleLabel, c.name + ': ' + d.name];
+    if (d.email) lines.push(c.email + ': ' + d.email);
+    if (d.phone) lines.push(c.phone + ': ' + d.phone);
+    if (d.company) lines.push(c.company + ': ' + d.company);
+    d.details.forEach(pair => lines.push(pair[0] + ': ' + pair[1]));
+    lines.push('', c.message + ':', d.message);
+    const text = lines.join('\n');
+    return text.length > 3000 ? text.slice(0, 3000) + '…' : text;
+  }
+
+  function mailtoLink(d, ti) {
+    const body = inquiryText(d, ti).replace(/\n/g, '\r\n');
+    return 'mailto:' + MAIL_TO + '?cc=' + MAIL_CC +
+      '&subject=' + encodeURIComponent(ti.send.waTitle + ' - ' + d.name) +
+      '&body=' + encodeURIComponent(body);
+  }
+
+  // Must run inside the click handler so the browser does not block the new tab
+  function openWhatsApp(text) {
+    const url = waLink(text);
+    const win = window.open(url, '_blank');
+    if (win) {
+      try { win.opener = null; } catch (e) { /* ignore */ }
+    } else {
+      window.location.href = url;
+    }
+  }
+
+  function showInquiryStatus(kind, text, withFallback) {
+    const status = document.getElementById('inq-status');
+    if (!status) return;
+    const styles = {
+      error: 'bg-red-50 text-red-700 border border-red-200',
+      success: 'bg-green-50 text-green-700 border border-green-200',
+      info: 'bg-blue-50 text-blue-800 border border-blue-200'
+    };
+    status.className = 'text-center py-3 px-4 rounded-lg text-sm font-sans mt-4 ' + (styles[kind] || styles.info);
+    status.textContent = text;
+    if (!withFallback) return;
+
+    const ti = inquiryT();
+    const d = collectInquiry(currentLang);
+    const hint = document.createElement('p');
+    hint.className = 'mt-2';
+    hint.textContent = ti.send.fallback;
+    const actions = document.createElement('div');
+    actions.className = 'mt-3 flex flex-wrap justify-center gap-3';
+    const wa = document.createElement('a');
+    wa.href = waLink(inquiryText(d, ti));
+    wa.target = '_blank';
+    wa.rel = 'noopener noreferrer';
+    wa.className = 'inline-flex items-center gap-2 px-4 py-2 rounded-lg text-white text-xs font-semibold';
+    wa.style.background = '#075E54';
+    wa.textContent = ti.send.whatsapp;
+    const mail = document.createElement('a');
+    mail.href = mailtoLink(d, ti);
+    mail.className = 'inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold border border-gray-300 text-gray-800 bg-white';
+    mail.textContent = ti.send.openMail;
+    actions.append(wa, mail);
+    status.append(hint, actions);
+  }
+
+  function clearInquiryFields() {
+    ['inq-name','inq-email','inq-phone','inq-company','inq-message','inq-projectType','inq-location','inq-budget','inq-timeline','inq-quantity','inq-supplierProducts','inq-supplierCountry','inq-partnerInterest'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.value = '';
+    });
+  }
+
+  // Inquiry form - send by email (FormSubmit)
+  window.submitInquiryForm = async function() {
+    const ti = inquiryT();
+    const d = collectInquiry(currentLang);
+    if (!d.name || !d.email || !d.message) {
+      showInquiryStatus('error', ti.send.errRequired);
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) {
+      showInquiryStatus('error', ti.send.errEmail);
+      return;
     }
 
+    const btn = document.getElementById('inq-submit');
     btn.disabled = true;
-    btn.textContent = btn.textContent.includes('Sending') ? btn.textContent : 'Sending...';
+    btn.textContent = ti.common.sending;
     btn.classList.add('opacity-60', 'cursor-not-allowed');
-    status.className = 'hidden';
+    document.getElementById('inq-status').className = 'hidden';
+
+    // The email to MOI always uses English labels, whatever the visitor's language
+    const en = collectInquiry('en');
+    const payload = {
+      _subject: '[' + d.role.toUpperCase() + '] New Inquiry from ' + d.name + ' - MOI Aluminium',
+      _replyto: d.email,
+      _cc: FORM_CC,
+      _template: 'table',
+      Name: d.name,
+      Email: d.email,
+      Phone: d.phone || '-',
+      Company: d.company || '-',
+      Role: en.roleLabel,
+      Language: currentLang.toUpperCase()
+    };
+    en.details.forEach(pair => { payload[pair[0]] = pair[1]; });
+    payload.Message = d.message;
 
     try {
-      // Build details text
-      let details = '';
-      if (currentRole === 'client') {
-        details += 'Project Type: ' + (roleData.projectType || '-') + '\n';
-        details += 'Location: ' + (roleData.location || '-') + '\n';
-        details += 'Budget: ' + (roleData.budget || '-') + '\n';
-        details += 'Timeline: ' + (roleData.timeline || '-') + '\n';
-        details += 'Quantities: ' + (roleData.quantity || '-');
-      } else if (currentRole === 'supplier') {
-        details += 'Products/Services: ' + (roleData.products || '-') + '\n';
-        details += 'Country: ' + (roleData.country || '-');
-      } else if (currentRole === 'partner') {
-        details += 'Partnership Interest: ' + (roleData.interest || '-');
-      }
-
-      // Send email via FormSubmit.co
-      const res = await fetch('https://formsubmit.co/ajax/moialu.contact@gmail.com', {
+      const res = await fetch('https://formsubmit.co/ajax/' + FORM_EMAIL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          _subject: '[' + currentRole.toUpperCase() + '] New Inquiry from ' + name + ' - MOI Aluminium',
-          _replyto: email,
-          _template: 'table',
-          Name: name,
-          Email: email,
-          Phone: phone || '-',
-          Company: company || '-',
-          Role: currentRole,
-          Details: details.trim(),
-          Message: message
-        })
+        body: JSON.stringify(payload)
       });
-      const data = await res.json();
-
-      if (data.success) {
-        status.className = 'text-center py-3 px-4 rounded-lg text-sm font-sans bg-green-50 text-green-700 border border-green-200 mt-4';
-        status.textContent = 'Thank you! Your inquiry has been sent. We will get back to you soon.';
-        // Clear all fields
-        ['inq-name','inq-email','inq-phone','inq-company','inq-message','inq-projectType','inq-location','inq-budget','inq-timeline','inq-quantity','inq-supplierProducts','inq-supplierCountry','inq-partnerInterest'].forEach(id => {
-          const el = document.getElementById(id);
-          if (el) el.value = '';
-        });
+      let data = {};
+      try { data = await res.json(); } catch (e) { /* non-JSON reply */ }
+      // FormSubmit returns success as the string "true" or "false"
+      const delivered = res.ok && (data.success === true || data.success === 'true');
+      if (delivered) {
+        showInquiryStatus('success', ti.send.success);
+        clearInquiryFields();
       } else {
-        status.className = 'text-center py-3 px-4 rounded-lg text-sm font-sans bg-red-50 text-red-700 border border-red-200 mt-4';
-        status.textContent = data.message || 'Something went wrong. Please try again.';
+        console.warn('Inquiry email not delivered:', data && data.message);
+        showInquiryStatus('error', ti.send.failed, true);
       }
     } catch (err) {
-      status.className = 'text-center py-3 px-4 rounded-lg text-sm font-sans bg-red-50 text-red-700 border border-red-200 mt-4';
-      status.textContent = 'Network error. Please check your connection and try again.';
+      showInquiryStatus('error', ti.send.network + ' ' + ti.send.failed, true);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = ti.send.email;
+      btn.classList.remove('opacity-60', 'cursor-not-allowed');
     }
+  };
 
-    btn.disabled = false;
-    btn.textContent = translations[currentLang]?.inquiry?.common?.submit || 'Submit Inquiry';
-    btn.classList.remove('opacity-60', 'cursor-not-allowed');
+  // Inquiry form - send via WhatsApp (opens a chat with the request typed in)
+  window.sendInquiryWhatsApp = function() {
+    const ti = inquiryT();
+    const d = collectInquiry(currentLang);
+    if (!d.name || !d.message) {
+      showInquiryStatus('error', ti.send.errRequiredWa);
+      return;
+    }
+    openWhatsApp(inquiryText(d, ti));
+    showInquiryStatus('info', ti.send.waOpening);
   };
   
   if (document.readyState === 'loading') {
